@@ -40,11 +40,11 @@ Here is a demo video:
 [![Watch the video](https://img.youtube.com/vi/w__n-ZZD07A/0.jpg)](https://www.youtube.com/watch?v=w__n-ZZD07A)
 
 ## Contributors
-[Abrar Ghandurah]()
+[Abrar Ghandurah](https://github.com/Abrar-M-G-CS)
 
-[Khafuq Altheyab]()
+[Khafuq Altheyab](https://github.com/Khafuq)
 
-[Lamia Alasmari]()
+[Lamia Alasmari](https://github.com/lamia-6001)
 
 ## Features
 * **Learn:** User can choose to "Learn" in order to rectify and enhace their handwriting. The app gives them a sample of the particular character seeing which the user can practice writing.
