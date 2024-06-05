@@ -1,4 +1,4 @@
-# فطِـن
+# Faten (فطِـن)
 
 
 ## Contributors
