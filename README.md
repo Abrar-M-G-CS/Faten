@@ -1,7 +1,7 @@
 # Faten (فطِـن)
 
 
-## Contributors
+## Arabic Handwritten Character and Digit Recognition and sign language detection 
 
 
 ![Status](https://img.shields.io/badge/Status-Finished-green)
