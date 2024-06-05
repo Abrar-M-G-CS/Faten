@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>فَطِن - اختر الأرقام</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.5"> </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/digit_choice.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <!-- Titles -->
+    <div class="grp-title">
+      <br>
+      <h1 class="arabic-title arabic-title baloo-bhaijaan-2-unique"> فَـطِـن</h1>
+    </div>
+    <!-- dropdowns -->
+    <div class="grp-dropdown">
+      <div class="dropdown">
+        <button onclick="myFunction('character')" class="dropbtn dropbtn-character btn-digit-learn">الأحرف <i class="fas fa-angle-down"></i></button>
+        <div id="myDropdown-character" class="dropdown-content dropdown-character">
+          <a href="/character/learn"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            تعلم</a>
+          <a href="/character/test"><i class="fa fa-pen" aria-hidden="true"></i>
+            تحدي</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button onclick="myFunction('digit')" class="dropbtn dropbtn-digit btn-digit-learn">الأرقام <i class="fas fa-angle-down"></i></i>
+        </button>
+        <div id="myDropdown-digit" class="dropdown-content dropdown-digit">
+          <a href="/digit/learn"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+
+            تعلم</a>
+          <a href="/digit/test"><i class="fa fa-pen" aria-hidden="true"></i>
+            تحدي</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button onclick="myFunction('signlanguage')" class="dropbtn dropbtn-digit btn-digit-learn">لغة الاشارة <i class="fas fa-angle-down"></i></i>
+        </button>
+        <div id="myDropdown-digit" class="dropdown-content dropdown-digit">
+          <a href="/sign/learn"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+
+            تعلم</a>
+          <a href="/sign/test"><i class="fa fa-pen" aria-hidden="true"></i>
+            تحدي</a>
+        </div>
+      </div>
+      <button id="back" style="margin-left: 2rem;" class="dropbtn dropbtn-digit btn-digit-learn" onclick="goBack()"><i class="fa fa-angle-left" aria-hidden="true"></i> الخلف </button>
+    </div>
+  </nav>
+  
+  <div class="bio">
+    <p class="p-home arabic-title baloo-bhaijaan-2-unique">
+      .اختر واحدًا من الأرقام العشرة وابدأ في التدريب</p>
+  </div>
+
+  <section id="option-part" class="option-digit">
+
+      <button onclick="learn(0)" class="btn-digit btn-0 arabic-title baloo-bhaijaan-2-unique">٠</button>
+      <button onclick="learn(1)" class="btn-digit btn-1 arabic-title baloo-bhaijaan-2-unique">١</button>
+      <button onclick="learn(2)" class="btn-digit btn-2 arabic-title baloo-bhaijaan-2-unique">٢</button>
+      <button onclick="learn(3)" class="btn-digit btn-3 arabic-title baloo-bhaijaan-2-unique">٣</button>
+      <button onclick="learn(4)" class="btn-digit btn-4 arabic-title baloo-bhaijaan-2-unique">٤</button>
+      <button onclick="learn(5)" class="btn-digit btn-5 arabic-title baloo-bhaijaan-2-unique">٥</button>
+      <button onclick="learn(6)" class="btn-digit btn-6 arabic-title baloo-bhaijaan-2-unique">٦</button>
+      <button onclick="learn(7)" class="btn-digit btn-7 arabic-title baloo-bhaijaan-2-unique">٧</button>
+      <button onclick="learn(8)" class="btn-digit btn-8 arabic-title baloo-bhaijaan-2-unique">٨</button>
+      <button onclick="learn(9)" class="btn-digit btn-9 arabic-title baloo-bhaijaan-2-unique">٩</button>
+
+  </section>
+
+  <!-- <button id="back" onclick="goBack()">Back</button> -->
+
+
+
+  <script>
+    function learn(digit) {
+      location.href = `/digit/learn?choice=${digit}`;
+    }
+    function goBack() {
+      location.href = "/digit"
+    }
+  </script>
+  <!-- for dropdown -->
+  <script>
+    /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  // JavaScript to toggle visibility of dropdowns
+function myFunction(value) {
+  if (value === 'character') {
+    document.getElementById("myDropdown-character").classList.toggle("show");
+  } else if (value === 'digit') {
+    document.getElementById("myDropdown-digit").classList.toggle("show");
+  } else if (value === 'signlanguage') {
+    document.getElementById("myDropdown-signlanguage").classList.toggle("show");
+  }
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn-character')) {
+    var dropdowns = document.getElementsByClassName("dropdown-character");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+  if (!event.target.matches('.dropbtn-digit')) {
+    var dropdowns = document.getElementsByClassName("dropdown-digit");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+  if (!event.target.matches('.dropbtn-signlanguage')) { // Ensure correct class name here
+    var dropdowns = document.getElementsByClassName("dropdown-signlanguage");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+    </script>
+</body>
+
+</html>

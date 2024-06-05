@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>فَـطِـن - اختر الاحرف</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.5"> </script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/character_choice.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <!-- Titles -->
+    <div class="grp-title">
+      <br>
+      <p class="arabic-title arabic-title baloo-bhaijaan-2-unique">فَـطِـن  </p>
+    </div>
+    <!-- dropdowns -->
+    <div class="grp-dropdown">
+      <div class="dropdown">
+        <button onclick="myFunction('character')" class="dropbtn dropbtn-character btn-digit-learn">الأحرف <i class="fas fa-angle-down"></i></button>
+        <div id="myDropdown-character" class="dropdown-content dropdown-character">
+          <a href="/character/learn"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            تعلم</a>
+          <a href="/character/test"><i class="fa fa-pen" aria-hidden="true"></i>
+            تحدي</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button onclick="myFunction('digit')" class="dropbtn dropbtn-digit btn-digit-learn">الأرقام <i class="fas fa-angle-down"></i></i>
+        </button>
+        <div id="myDropdown-digit" class="dropdown-content dropdown-digit">
+          <a href="/digit/learn"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            تعلم</a>
+          <a href="/digit/test"><i class="fa fa-pen" aria-hidden="true"></i>
+            تحدي</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button onclick="myFunction('signlanguage')" class="dropbtn dropbtn-signlanguage btn-digit-learn">لغة الإشارة <i class="fas fa-angle-down"></i></button>
+        <div id="myDropdown-signlanguage" class="dropdown-content dropdown-signlanguage">
+          <!-- Add your dropdown links or options here -->
+          <a href="/sign/learn"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            تعلم</a>
+          <a href="/sign/test"><i class="fa fa-pen" aria-hidden="true"></i>
+            تحدي</a>
+        </div>
+      </div>
+      <button id="back" style="margin-left: 2rem;" class="dropbtn dropbtn-digit btn-digit-learn" onclick="goBack()"><i class="fa fa-angle-left" aria-hidden="true"></i> الخلف</button>
+    </div>
+  </nav>
+  <div class="bio">
+    <p class="p-home arabic-title baloo-bhaijaan-2-unique">
+      رحلة الألف ميل تبدأ بخطوة، وابدأ خطوتك الأولى مع حرف من حروف اللغة العربية الـ  ٢٨ </p>
+  </div>
+  <!-- <button id="back" onclick="goBack()">Back</button> -->
+  <div class="characters">
+    <section id="character-option-part" class="option-char"> 
+      <div class="part">
+        <button onclick="learn(0)" class="btn-char arabic-title baloo-bhaijaan-2-unique">أ</button>
+        <button onclick="learn(1)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ب</button>
+        <button onclick="learn(2)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ت</button>
+        <button onclick="learn(3)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ث</button>
+        <button onclick="learn(4)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ج</button>
+        <button onclick="learn(5)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ح</button>
+        <button onclick="learn(6)" class="btn-char arabic-title baloo-bhaijaan-2-unique">خ</button></div>
+      <div class="part">
+        <button onclick="learn(7)" class="btn-char arabic-title baloo-bhaijaan-2-unique">د</button>
+        <button onclick="learn(8)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ذ</button>
+        <button onclick="learn(9)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ر</button>
+        <button onclick="learn(10)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ز</button>
+        <button onclick="learn(11)" class="btn-char arabic-title baloo-bhaijaan-2-unique">س</button>
+        <button onclick="learn(12)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ش</button>
+        <button onclick="learn(13)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ص</button></div>
+      <div class="part">
+        <button onclick="learn(14)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ض</button>
+        <button onclick="learn(15)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ط</button>
+        <button onclick="learn(16)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ظ</button>
+        <button onclick="learn(17)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ع</button>
+        <button onclick="learn(18)" class="btn-char arabic-title baloo-bhaijaan-2-unique">غ</button>
+        <button onclick="learn(19)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ف</button>
+        <button onclick="learn(20)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ق</button></div>
+      <div class="part">
+        <button onclick="learn(21)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ك</button>
+        <button onclick="learn(22)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ل</button>
+        <button onclick="learn(23)" class="btn-char arabic-title baloo-bhaijaan-2-unique">م</button>
+        <button onclick="learn(24)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ن</button>
+        <button onclick="learn(25)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ه</button>
+        <button onclick="learn(26)" class="btn-char arabic-title baloo-bhaijaan-2-unique">و</button>
+        <button onclick="learn(27)" class="btn-char arabic-title baloo-bhaijaan-2-unique">ي</button></div>
+    </section>
+  </div>
+
+
+ 
+  <script>
+      function learn(digit) {
+          location.href = `/character/learn?choice=${digit}`;
+      }
+      function goBack() {
+        location.href="/character"
+      }
+  </script>
+  <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+   // JavaScript to toggle visibility of dropdowns
+function myFunction(value) {
+  if (value === 'character') {
+    document.getElementById("myDropdown-character").classList.toggle("show");
+  } else if (value === 'digit') {
+    document.getElementById("myDropdown-digit").classList.toggle("show");
+  } else if (value === 'signlanguage') {
+    document.getElementById("myDropdown-signlanguage").classList.toggle("show");
+  }
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn-character')) {
+    var dropdowns = document.getElementsByClassName("dropdown-character");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+  if (!event.target.matches('.dropbtn-digit')) {
+    var dropdowns = document.getElementsByClassName("dropdown-digit");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+  if (!event.target.matches('.dropbtn-signlanguage')) { // Ensure correct class name here
+    var dropdowns = document.getElementsByClassName("dropdown-signlanguage");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+    </script>
+  
+</body>
+
+</html>

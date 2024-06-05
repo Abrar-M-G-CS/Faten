@@ -1,0 +1,263 @@
+@import url('http://fonts.cdnfonts.com/css/afarat-ibn-blady');
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lateef&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lateef&family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap');
+
+html {
+	min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;  /* Ensure no default margins affect layout */
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #fcfafa;
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('images/misc/78825.jpg');
+    background-size: cover; 
+    background-attachment: fixed;  /* Fix the background image in place */
+    background-position: center;  /* Center the background image */
+	
+}
+
+section {
+    display: flex;
+    height: 300px;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+/* #character-option-part {
+	display: flex;
+	height: 300px;
+	align-items: center;
+	justify-content: space-evenly;
+	margin: 20px 0;
+} */
+
+#prediction {
+	font-family: 'Montserrat', sans-serif;
+	width: 300px;
+	height: 300px;
+	box-sizing: border-box;
+	border: 0.1px solid #acbfc6ae;
+	border-radius: 5px;
+	font-size: 500px;
+	line-height: 500px;
+	background-color:  #acbfc6ae;
+	font-weight: bold;
+	font-size: 1.5em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#main-canvas {
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#small-canvas, #small-main-canvas {
+	display: none;
+}
+
+button {
+	font: inherit;
+	text-transform: uppercase;
+	height: 40px;
+	padding: 0 16px;
+	border: 0.5px solid rgb(122, 143, 148);
+	border-radius: 4px;
+	background: none;
+	outline: none;
+	cursor: pointer;
+	transition: all 0.3s;
+	--webkit-transition: all 0.3s;
+	--moz-transition: all 0.3s;
+}
+
+button:hover {
+	background-color: rgb(122, 143, 148);
+	color: white;
+}
+
+
+
+.arabic-title, .title {
+	font-size: 48px;
+	/* margin: 20px; */
+	/* display: inline; */
+}
+
+.arabic-title {
+	font-family: 'Lateef', 'cursive';
+	font-size: 8rem;
+	margin-bottom: 0;
+	margin-top: 2rem;
+	/* display: block; */
+}
+
+.title {
+	font-family: 'Sofia', cursive;
+	margin-top: 0;
+	margin-bottom: 1rem;
+	padding-bottom: 10px;
+}
+
+.navbar {
+	display: flex;
+	background-color: #acbfc6ae;
+	justify-content: space-between;
+	height: 150px;
+}
+
+.btn-home {
+	background-color: rgb(122, 143, 148);
+	height: 300px;
+	width: 500px;
+	font-size: 5rem;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    color: white;
+	/* margin-top: 2em; */
+	border-radius: 0.5em;
+	margin-bottom: 2em;
+	scale: .89;
+}
+
+.btn-home:hover {
+	background-color: #acbfc6ae;
+	color: rgb(255, 255, 255);
+	transition: background-color 0.1s ease;
+	text-decoration: none;
+}
+
+.home-buttons {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+
+}
+
+
+
+.p-home {
+	
+	margin-top: 2.5em;
+	margin-bottom: 3.5em;
+	font-weight: 600;
+	font-size: 3rem;
+	color: rgb(104, 120, 124);	
+}
+
+
+
+
+/* DROP DOWN */
+
+.dropbtn {
+	scale: 1.3;
+	font-weight: bold;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: solid rgb(252, 252, 252) 3px;
+	border-radius: 0px;
+	transition: all .3s;
+	font-family: 'Baloo Bhaijaan 2', sans-serif;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+	scale: 1.4;
+	/* box-shadow: 0 5px 15	px rgba(255, 220, 81, 0.778); */
+  }
+
+/* Basic styles for dropdown */
+.dropdown {
+	position: relative;
+	display: inline-block;
+	margin: 2px 20px;
+	padding: 5px 10px;
+	/* justify-content: left;
+	align-items: left; */
+  }
+  
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 190px;
+	font-size: 1.8rem;
+	/* min-height: 200px; */
+	overflow: auto;
+	transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	box-shadow: 0px 8px 16px 0px rgb(122, 143, 148);
+	z-index: 1;
+	border-radius: 10px;
+  }
+  
+  .dropdown-content a {
+	background-color: rgb(122, 143, 148);
+	color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  }
+  
+  .dropdown a:hover {
+	background-color: #acbfc6ae;
+	color: rgb(122, 143, 148);
+  }
+  
+  /* Show dropdown content on hover */
+  .dropdown:hover .dropdown-content {
+	display: block;
+  }
+  
+  /* Additional styles */
+  .grp-title {
+	display: inline-block;
+	width: 50%;
+	text-align: left;
+	scale: 0.8;
+  }
+  
+  .grp-dropdown {
+	display: flex;
+	justify-content: flex-end;
+	width: -50%;
+	align-items: center;
+  }
+
+  
+  .baloo-bhaijaan-2-unique {
+	font-family: "Baloo Bhaijaan 2", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 600; /* Example weight */
+	font-style: normal;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

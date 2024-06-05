@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>sign chosie</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.5"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/digit_choice.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <!-- Titles -->
+    <div class="grp-title">
+      <br>
+      <h1 class="arabic-title"> فَـطِـن</h1>
+    </div>
+    <!-- dropdowns -->
+    <div class="grp-dropdown">
+      <div class="dropdown">
+        <button onclick="myFunction('character')" class="dropbtn dropbtn-character btn-digit-learn">الأحرف <i class="fas fa-angle-down"></i></button>
+        <div id="myDropdown-character" class="dropdown-content dropdown-character">
+          <a href="/character/learn"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            تعلم</a>
+          <a href="/character/test"><i class="fa fa-pen" aria-hidden="true"></i>
+            تحدي</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button onclick="myFunction('digit')" class="dropbtn dropbtn-digit btn-digit-learn">الأرقام <i class="fas fa-angle-down"></i></button>
+        <div id="myDropdown-digit" class="dropdown-content dropdown-digit">
+          <a href="/digit/learn"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            تعلم</a>
+          <a href="/digit/test"><i class="fa fa-pen" aria-hidden="true"></i>
+            تحدي</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button onclick="myFunction('signlanguage')" class="dropbtn dropbtn-signlanguage btn-digit-learn">لغة الإشارة <i class="fas fa-angle-down"></i></button>
+        <div id="myDropdown-signlanguage" class="dropdown-content dropdown-signlanguage">
+          <a href="/sign/learn"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            تعلم</a>
+          <a href="/sign/test"><i class="fa fa-pen" aria-hidden="true"></i>
+            تحدي</a>
+        </div>
+      </div>
+      <button id="back" style="margin-left: 2rem;" class="dropbtn dropbtn-digit btn-digit-learn" onclick="goBack()"><i class="fa fa-angle-left" aria-hidden="true"></i> الخلف </button>
+    </div>
+  </nav>
+  
+  <div class="bio">
+    <p class="p-home">XXXXX</p>
+  </div>
+
+  <section id="option-part" class="option-digit">
+    <div class="part">
+      <button onclick="learn('ا')" class="btn-digit btn-0">ا</button>
+      <button onclick="learn('ع')" class="btn-digit btn-1">ع</button>
+      <button onclick="learn('ال')" class="btn-digit btn-2">ال</button>
+      <button onclick="learn('ا')" class="btn-digit btn-3">ا</button>
+      <button onclick="learn('اللغة-العربية-للإشارات')" class="btn-digit btn-4">اللغة العربية للإشارات</button>
+    </div>
+    <div class="part">
+      <button onclick="learn('ب')" class="btn-digit btn-5">ب</button>
+      <button onclick="learn('ض')" class="btn-digit btn-6">ض</button>
+      <button onclick="learn('د')" class="btn-digit btn-7">د</button>
+      <button onclick="learn('ف')" class="btn-digit btn-8">ف</button>
+    </div>
+    <div class="part">
+      <button onclick="learn('غ')" class="btn-digit btn-9">غ</button>
+      <button onclick="learn('ح')" class="btn-digit btn-10">ح</button>
+      <button onclick="learn('ه')" class="btn-digit btn-11">ه</button>
+      <button onclick="learn('ك')" class="btn-digit btn-12">ك</button>
+    </div>
+    <div class="part">
+      <button onclick="learn('خ')" class="btn-digit btn-13">خ</button>
+      <button onclick="learn('لا')" class="btn-digit btn-14">لا</button>
+      <button onclick="learn('ل')" class="btn-digit btn-15">ل</button>
+      <button onclick="learn('م')" class="btn-digit btn-16">م</button>
+    </div>
+    <div class="part">
+      <button onclick="learn('ن')" class="btn-digit btn-17">ن</button>
+      <button onclick="learn('ق')" class="btn-digit btn-18">ق</button>
+      <button onclick="learn('ر')" class="btn-digit btn-19">ر</button>
+      <button onclick="learn('ص')" class="btn-digit btn-20">ص</button>
+    </div>
+    <div class="part">
+      <button onclick="learn('س')" class="btn-digit btn-21">س</button>
+      <button onclick="learn('ش')" class="btn-digit btn-22">ش</button>
+      <button onclick="learn('ط')" class="btn-digit btn-23">ط</button>
+      <button onclick="learn('ت')" class="btn-digit btn-24">ت</button>
+    </div>
+    <div class="part">
+      <button onclick="learn('ة')" class="btn-digit btn-25">ة</button>
+      <button onclick="learn('ث')" class="btn-digit btn-26">ث</button>
+      <button onclick="learn('و')" class="btn-digit btn-27">و</button>
+      <button onclick="learn('ي')" class="btn-digit btn-28">ي</button>
+    </div>
+    <div class="part">
+      <button onclick="learn('ز')" class="btn-digit btn-29">ز</button>
+      <button onclick="learn('ح')" class="btn-digit btn-30">ح</button>
+      <button onclick="learn('ج')" class="btn-digit btn-31">ج</button>
+      <button onclick="learn('س')" class="btn-digit btn-32">س</button>
+      <button onclick="learn('ذ')" class="btn-digit btn-33">ذ</button>
+      <button onclick="learn('ظ')" class="btn-digit btn-34">ظ</button>
+    </div>
+  </section>
+
+  <script>
+    function learn(sign) {
+      location.href = `/sign/learn?choice=${sign}`;
+    }
+    function goBack() {
+      location.href = "/sign";
+    }
+    // JavaScript to toggle visibility of dropdowns
+    function myFunction(value) {
+      if (value === 'character') {
+        document.getElementById("myDropdown-character").classList.toggle("show");
+      } else if (value === 'digit') {
+        document.getElementById("myDropdown-digit").classList.toggle("show");
+      } else if (value === 'signlanguage') {
+        document.getElementById("myDropdown-signlanguage").classList.toggle("show");
+      }
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn-character')) {
+        var dropdowns = document.getElementsByClassName("dropdown-character");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+      if (!event.target.matches('.dropbtn-digit')) {
+        var dropdowns = document.getElementsByClassName("dropdown-digit");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+      if (!event.target.matches('.dropbtn-signlanguage')) {
+        var dropdowns = document.getElementsByClassName("dropdown-signlanguage");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
